@@ -24,13 +24,14 @@ const userProductSchema = new mongoose.Schema({
         type: Date,
         required: [true, 'Request date is required']
     },
+    approvedDate: {
+        type: Date
+    },
     issuedDate: {
-        type: Date,
-        required: [true, 'Issued date is required']
+        type: Date
     },
     returnDate: {
-        type: Date,
-        required: [true, 'Return date is required']
+        type: Date
     },
     secyApprovalStatus: {
         type: String,
@@ -52,7 +53,7 @@ const userProductSchema = new mongoose.Schema({
     },
     returnDescription: {
         type: String,
-        required: [true, 'Description is required']
+        // required: [true, 'Description is required']
     },
     council: {
         type: String,
@@ -66,7 +67,7 @@ const userProductSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: [true, 'Image is required'],
+        // required: [true, 'Image is required'],
         validate: [validator.isURL, 'Please provide a valid URL']
     }
 });
