@@ -1,4 +1,3 @@
-const express = require('express');
 const Product = require('./../models/productModel');
 const userProduct = require('./../models/userProductModel');
 const asyncCheck = require('./../utils/asyncCheck');
@@ -84,7 +83,7 @@ exports.requestRejectedBySecy = asyncCheck(async (req, res) => {
 })
 
 
-exports.showProductToManger = asyncCheck(async (req, res) => {
+exports.showRequestToManager = asyncCheck(async (req, res) => {
     const products = await userProduct.find({ secyApprovalStatus: "Approved" });
     if (!products) {
         return next(new error('No product found with the student', 404));
