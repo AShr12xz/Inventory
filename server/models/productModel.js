@@ -26,7 +26,7 @@ const productSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: [true, 'Image is required'],
+        // required: [true, 'Image is required'],
         validate: [validator.isURL, 'Please provide a valid URL']
     }
 });
